@@ -23,7 +23,7 @@ const userSchema=new mongoose.Schema({
         type:String,
         requied:true
     },
-    state:{
+    status:{
         type:Number,
         default:0
     }
