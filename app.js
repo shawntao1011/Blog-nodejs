@@ -52,7 +52,14 @@ app.use('/admin',admin);
 app.use((error,req,res,next)=>{
     const result=JSON.parse(error);
 
-    res.redirect(`${result.path}?message=${result.message}`);
+    let params=[];
+    for (let attr in result){
+        if (attr!='path'){
+            params.push(attr+ '='+result[attr]);
+        }
+    }
+
+    res.redirect(`${result.path}?${params.join('&')}`);
 })
 
 //listen port
