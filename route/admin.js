@@ -27,4 +27,7 @@ admin.post('/user-edit',require('./admin/user-edit-fn'));
 
 admin.post('/user-modify',require('./admin/user-modify'));
 
+//delete user route
+admin.get('/delete',require('./admin/user-delete'));
+
 module.exports=admin;
