@@ -3,11 +3,14 @@
 const express=require('express');
 const path=require('path');
 
-
 //import body-parser
 const bodyparser=require('body-parser');
 
 const session=require('express-session');
+
+
+const template=require('art-template');
+const dateFormat=require('dateformat');
 
 //create server
 const app=express();
@@ -18,6 +21,12 @@ require('./model/connect');
 
 //handle post
 app.use(bodyparser.urlencoded({extended:false}));
+
+//handle binary data
+//formidable
+/*
+    formidable :get get attr,post attr,file upload
+*/
 
 app.use(session({
     'secret':'my-key',
@@ -35,6 +44,8 @@ app.set('view engine','art');
 
 //set render enginee
 app.engine('art',require('express-art-template'));
+
+template.defaults.imports.dateFormat=dateFormat;
 
 // static resouce
 app.use(express.static(path.join(__dirname,'public')));
