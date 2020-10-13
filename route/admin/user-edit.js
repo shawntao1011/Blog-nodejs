@@ -1,6 +1,7 @@
 const {User}=require('../../model/user');
 
 module.exports=async (req,res)=>{
+    req.app.locals.currentlink='user';
 
     //get id attr in url
     const {message,id}=req.query;

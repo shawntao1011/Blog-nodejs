@@ -1,6 +1,9 @@
 const {User}=require('../../model/user');
 
 module.exports=async (req,res)=>{
+
+    req.app.locals.currentlink='user';
+
     //current page
     let page=req.query.page || 1;
 

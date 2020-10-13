@@ -30,4 +30,12 @@ admin.post('/user-modify',require('./admin/user-modify'));
 //delete user route
 admin.get('/delete',require('./admin/user-delete'));
 
+//blog doc rout
+//doc list route
+admin.get('/article',require('./admin/article'));
+
+//doc edit route
+admin.get('/article-edit',require('./admin/article-edit'));
+
+
 module.exports=admin;

@@ -4,7 +4,7 @@
     
     <!-- main content -->
     <div class="content">
-        {include './common/aside.art'}}
+        {{include './common/aside.art'}}
         <div class="main">
             <!-- 分类标题 -->
             <div class="title">
