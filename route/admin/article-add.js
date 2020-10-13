@@ -2,6 +2,8 @@ const formidable=require('formidable');
 
 const path=require('path');
 
+const {Article}=require('../../model/article');
+
 module.exports=(req,res)=>{
     //create formidable object
     const form=new formidable.IncomingForm();
@@ -12,12 +14,21 @@ module.exports=(req,res)=>{
     //save the file type
     form.keepExtensions=true;
     //resolve the table
-    form.parse(req,(err,fields,files)=>{
+    form.parse(req,async(err,fields,files)=>{
         //err error object
         //fields normal attr
         //files binary data
-        res.send(files);
+        //res.send(files);
         
+        await Article.create({
+            title:fields.title,
+            author:fields.author,
+            publishDate:fields.publishDate,
+            cover:files.cover.path.split('public')[1],
+            content:fields.content
+        });
+
+        res.redirect('/admin/article');
     });
 
 }
