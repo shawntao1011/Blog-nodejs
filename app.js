@@ -19,7 +19,13 @@ require('./model/connect');
 //handle post
 app.use(bodyparser.urlencoded({extended:false}));
 
-app.use(session({'secret':'my-key'}));
+app.use(session({
+    'secret':'my-key',
+    saveUninitialized:false,
+    cookie:{
+        maxAge:24*60*60*1000
+    }
+}));
 
 
 //set express module location

@@ -37,5 +37,7 @@ admin.get('/article',require('./admin/article'));
 //doc edit route
 admin.get('/article-edit',require('./admin/article-edit'));
 
+//article add route
+admin.post('/article-add',require('./admin/article-add'));
 
 module.exports=admin;

@@ -2,15 +2,15 @@
     {{block 'main'}}
 	{{include './common/header.art'}}
     
-    <!-- 主体内容 -->
+    <!-- main content-->
     <div class="content">
     	{{include './common/aside.art'}}
         <div class="main">
         	<!-- 分类标题 -->
             <div class="title">
-                <h4>文章</h4>
-                <span>找到1篇文章</span>
-                <a href="article-edit.html" class="btn btn-primary new">发布新文章</a>
+                <h4>article</h4>
+                <span>find one article</span>
+                <a href="/admin/article-edit" class="btn btn-primary new">发布新文章</a>
             </div>
             <!-- /分类标题 -->
             <!-- 内容列表 -->
@@ -18,10 +18,10 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>标题</th>
-                        <th>发布时间</th>
-                        <th>作者</th>
-                        <th>操作</th>
+                        <th>Title</th>
+                        <th>Publish Date</th>
+                        <th>author</th>
+                        <th>operation</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,8 +79,8 @@
             <!-- /分页 -->
         </div>
     </div>
-    <!-- /主体内容 -->
-    <!-- 删除确认弹出框 -->
+    <!-- /main content -->
+    <!-- delete dropbox-->
     <div class="modal fade confirm-modal">
         <div class="modal-dialog modal-lg">
             <form class="modal-content">
@@ -98,5 +98,5 @@
             </form>
         </div>
     </div>
-    <!-- /删除确认弹出框 -->
+    <!-- /delete dropbox -->
     {{/block}}
