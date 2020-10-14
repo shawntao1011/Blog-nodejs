@@ -1,0 +1,19 @@
+<!-- header frame -->
+<div class="header"> 
+    <div class="w1100">
+        <!-- websote logo -->
+
+        <!-- website logon -->
+        <!-- website navigation -->
+        <ul class="navigation fr">
+            <li>
+                <a class="active" href="index.html">Index</a>
+            </li>
+            <li>
+                <a href="#">Login</a>
+            </li>
+        </ul>
+        <!-- website navigation -->
+    </div>
+</div>
+<!-- header frame -->

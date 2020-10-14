@@ -2,9 +2,14 @@ const express=require('express');
 
 const home=express.Router();
 
-// second router
-home.get('/',(req,res)=>{
-    res.send('welcome to home');
-});
+
+// blog index
+home.get('/', require('./home/index'));
+
+// blog view 
+home.get('/article', require('./home/article'));
+
+// blog comment
+home.post('/comment', require('./home/comment'));
 
 module.exports=home;
