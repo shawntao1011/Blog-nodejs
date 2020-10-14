@@ -18,7 +18,11 @@
                 multioart/form-data set to be binary
             -->
             <!-- /sub title -->
+            {{if article}}
             <form class="form-container" action="/admin/article-edit" method="post" enctype="multipart/form-data">
+            {{else}}
+            <form class="form-container" action="/admin/article-add" method="post" enctype="multipart/form-data">
+            {{/if}}
                 <div class="form-group">
                     <label>Title</label>
                     <input name="title" type="text" class="form-control" placeholder="please enter the title" value="{{article && article.title}}">
