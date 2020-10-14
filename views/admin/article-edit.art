@@ -8,7 +8,9 @@
         <div class="main">
             <!-- sub title -->
             <div class="title">
-                <h4>5b9a716cb2d2bf17706bcc0a</h4>
+                {{if article}}
+                <h4>{{@article._id}}</h4>
+                {{/if}}
             </div>
             <!--
                 enctype set the encoding type
@@ -16,13 +18,14 @@
                 multioart/form-data set to be binary
             -->
             <!-- /sub title -->
-            <form class="form-container" action="/admin/article-add" method="post" enctype="multipart/form-data">
+            <form class="form-container" action="/admin/article-edit" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Title</label>
-                    <input name="title"type="text" class="form-control" placeholder="please enter the title">
+                    <input name="title" type="text" class="form-control" placeholder="please enter the title" value="{{article && article.title}}">
                 </div>
                 <div class="form-group">
                     <label>Author</label>
+                    <!-- the value can only be the admin-->
                     <input name="author" type="text" class="form-control" readonly value="{{@userInfo._id}}">
                 </div>
                 <div class="form-group">
@@ -39,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <label>content </label>
-                    <textarea name="content" class="form-control" id="editor"></textarea>
+                    <textarea name="content" class="form-control" id="editor">{{article && article.content}}</textarea>
                 </div>
                 <div class="buttons">
                     <input type="submit" class="btn btn-primary">

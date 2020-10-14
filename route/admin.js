@@ -37,6 +37,7 @@ admin.get('/article',require('./admin/article'));
 //doc edit route
 admin.get('/article-edit',require('./admin/article-edit'));
 
+admin.post('/article-edit',require('./admin/article-edit-fn'));
 //article add route
 admin.post('/article-add',require('./admin/article-add'));
 

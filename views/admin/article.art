@@ -9,7 +9,7 @@
         	<!-- sub title -->
             <div class="title">
                 <h4>article</h4>
-                <span>find one article</span>
+                <span>find  {{articles.records.length}} article</span>
                 <a href="/admin/article-edit" class="btn btn-primary new">new article</a>
             </div>
             <!-- /sub title -->
@@ -32,7 +32,7 @@
                         <td>{{dateFormat($value.publishDate,'yyyy-mm-dd')}}</td>
                         <td>{{@$value.author}}</td>
                         <td>
-                            <a href="article-edit.html" class="glyphicon glyphicon-edit"></a>
+                            <a href="/admin/article-edit?id={{@$value._id}}" class="glyphicon glyphicon-edit"></a>
                             <i class="glyphicon glyphicon-remove" data-toggle="modal" data-target=".confirm-modal"></i>
                         </td>
                     </tr>
@@ -72,10 +72,10 @@
             <form class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                    <h4 class="modal-title">请确认</h4>
+                    <h4 class="modal-title">please confirm</h4>
                 </div>
                 <div class="modal-body">
-                    <p>您确定要删除这篇文章吗?</p>
+                    <p>Do you really want to delete this doc?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
