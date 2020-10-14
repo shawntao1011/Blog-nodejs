@@ -14,7 +14,7 @@
             </span>
             <ul class="dropdown-menu">
                 <li><a href="user-edit.html">User Info</a></li>
-                <li><a href="#">LogOut</a></li>
+                <li><a href="/admin/logout">LogOut</a></li>
             </ul>
         </div>
     </div>

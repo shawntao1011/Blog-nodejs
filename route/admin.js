@@ -40,4 +40,7 @@ admin.get('/article-edit',require('./admin/article-edit'));
 //article add route
 admin.post('/article-add',require('./admin/article-add'));
 
+//realize logout
+admin.post('/logout',require('./admin/logout'));
+
 module.exports=admin;
